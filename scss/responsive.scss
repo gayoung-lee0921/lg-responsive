@@ -1,0 +1,10 @@
+// 반응형 방법 2
+@media all and (max-width: 1280px) {
+  // 여기다가 1280보다 작아졌을 때 어떤 css 쓸건지 적용
+}
+@media all and (max-width: 960px) {
+  // 여기다가 960보다 작아졌을 때 어떤 css 쓸건지 적용
+}
+@media all and (max-width: 640px) {
+  // 여기다가 640보다 작아졌을 때 어떤 css 쓸건지 적용
+}

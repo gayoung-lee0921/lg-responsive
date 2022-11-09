@@ -19,8 +19,8 @@
   color: #fff;
   position: absolute;
   left: 300px;
-  bottom: 400px;
-  font-size: 20px;
+  bottom: 300px;
+  font-size: 24px;
 }
 #main-visual .list li .txt p {
   margin-bottom: 30px;
@@ -71,7 +71,7 @@
   justify-content: center;
 }
 #main-visual .pagination .swiper-pagination-bullet {
-  width: 300px;
+  width: 400px;
   height: 4px;
   background-color: #fff;
   border-radius: 0;
@@ -108,8 +108,9 @@
   background: #f4f4f4;
 }
 #introduce .banner ul li {
-  height: 380px;
   width: 50%;
+  min-height: 280px;
+  aspect-ratio: 1.5/1;
   position: relative;
   overflow: hidden;
 }
@@ -186,9 +187,97 @@
   line-height: 1.5;
   margin: 30px 0;
 }
+#notice .banner ul li p {
+  line-height: 1.5;
+}
 #notice .banner ul li .date {
   margin-top: 50px;
 }
 #notice .banner ul li .date span {
   color: #dd3156;
+}
+
+@media all and (max-width: 1280px) {
+  #main-visual .list li .txt {
+    left: 15vw;
+    font-size: clamp(16px, 1.8vw, 24px);
+  }
+  #main-visual .list li .txt strong {
+    font-size: clamp(24px, 5.6vw, 72px);
+  }
+  #main-visual .pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    border: 3px solid #fff;
+    margin: 0 5px;
+    background-color: transparent;
+    transition: all 0.25s ease;
+  }
+  #main-visual .pagination .swiper-pagination-bullet-active {
+    width: 80px;
+    background-color: #fff;
+  }
+  .contents-box h2 {
+    font-size: clamp(24px, 2.8vw, 36px);
+  }
+}
+@media all and (max-width: 980px) {
+  .contents-box {
+    padding: clamp(30px, 10.2vw, 100px) 0;
+  }
+  .contents-box .banner {
+    margin-top: clamp(30px, 10.2040816327vw, 100px);
+  }
+  #main-visual .btn {
+    padding: 0;
+  }
+  #main-visual .btn .material-icons {
+    font-size: 48px;
+  }
+  #introduce .btns {
+    top: 90px;
+    right: 20px;
+  }
+  #introduce .btns i {
+    font-size: 20px;
+  }
+  #introduce .banner ul li .txt {
+    left: 30px;
+  }
+  #introduce .banner ul li .txt h3 {
+    font-size: clamp(20px, 3.36vw, 36px);
+  }
+  #activity .btns {
+    top: 40px;
+    right: 20px;
+  }
+  #activity .btns i {
+    font-size: 20px;
+  }
+  #activity .banner ul li .txt {
+    left: 30px;
+  }
+  #activity .banner ul li .txt h3 {
+    font-size: clamp(20px, 3.36vw, 36px);
+  }
+  #notice .btns {
+    top: 40px;
+    right: 20px;
+  }
+  #notice .btns i {
+    font-size: 20px;
+  }
+  #notice .banner ul li h3 {
+    font-size: clamp(20px, 2.4vw, 24px);
+  }
+}
+@media all and (max-width: 640px) {
+  #main-visual .list li .txt {
+    left: 15vw;
+    right: 15vw;
+  }
+  #main-visual .list li .txt .desc {
+    width: auto;
+  }
 }

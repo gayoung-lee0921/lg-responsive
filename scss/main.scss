@@ -21,8 +21,8 @@
         color: #fff;
         position: absolute;
         left: 300px;
-        bottom: 400px;
-        font-size: 20px;
+        bottom: 300px;
+        font-size: $h3;
         p {
           margin-bottom: 30px;
         }
@@ -74,7 +74,7 @@
     display: flex;
     justify-content: center;
     .swiper-pagination-bullet {
-      width: 300px;
+      width: 400px;
       height: 4px;
       background-color: #fff;
       border-radius: 0;
@@ -111,11 +111,13 @@
 #introduce {
   overflow: hidden;
   background: #f4f4f4;
+
   .banner {
     ul {
       li {
-        height: 380px;
         width: 50%;
+        min-height: 280px;
+        aspect-ratio: 1.5/1;
         position: relative;
         overflow: hidden;
         &:hover {
@@ -157,6 +159,7 @@
 
 #activity {
   overflow: hidden;
+
   .banner {
     ul {
       li {
@@ -203,10 +206,142 @@
           @include multiElilipsis;
           margin: 30px 0;
         }
+        p {
+          line-height: 1.5;
+        }
         .date {
           margin-top: 50px;
           span {
             color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1280px) {
+  #main-visual {
+    .list {
+      li {
+        .txt {
+          left: 15vw;
+          font-size: clamp(16px, 1.8vw, 24px);
+          strong {
+            font-size: clamp(24px, 5.6vw, 72px);
+          }
+        }
+      }
+    }
+    .pagination {
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        border: 3px solid #fff;
+        margin: 0 5px;
+        background-color: transparent;
+        transition: all 0.25s ease;
+        &-active {
+          width: 80px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .contents-box {
+    h2 {
+      font-size: clamp(24px, 2.8vw, 36px);
+    }
+  }
+}
+
+@media all and (max-width: 980px) {
+  .contents-box {
+    padding: clamp(30px, 10.2vw, 100px) 0;
+    .banner {
+      margin-top: clamp(30px, 100/980 * 100vw, 100px);
+    }
+  }
+  #main-visual {
+    .btn {
+      padding: 0;
+      .material-icons {
+        font-size: 48px;
+      }
+    }
+  }
+  #introduce {
+    .btns {
+      top: 90px;
+      right: 20px;
+      i {
+        font-size: 20px;
+      }
+    }
+    .banner {
+      ul {
+        li {
+          .txt {
+            left: 30px;
+            h3 {
+              font-size: clamp(20px, 3.36vw, 36px);
+            }
+          }
+        }
+      }
+    }
+  }
+  #activity {
+    .btns {
+      top: 40px;
+      right: 20px;
+      i {
+        font-size: 20px;
+      }
+    }
+    .banner {
+      ul {
+        li {
+          .txt {
+            left: 30px;
+            h3 {
+              font-size: clamp(20px, 3.36vw, 36px);
+            }
+          }
+        }
+      }
+    }
+  }
+  #notice {
+    .btns {
+      top: 40px;
+      right: 20px;
+      i {
+        font-size: 20px;
+      }
+    }
+    .banner {
+      ul {
+        li {
+          h3 {
+            font-size: clamp(20px, 2.4vw, 24px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 640px) {
+  #main-visual {
+    .list {
+      li {
+        .txt {
+          left: 15vw;
+          right: 15vw;
+          .desc {
+            width: auto;
           }
         }
       }

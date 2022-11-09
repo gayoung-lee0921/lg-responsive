@@ -70,3 +70,9 @@ depth01.on("click", function (e) {
 
 // 이벤트를 임의로 한번 해줌
 $(window).trigger("resize");
+
+const familySlider = new Swiper("footer #family-site .container", {
+  spaceBetween: 30,
+  slidesPerView: "auto",
+  freeMode: true,
+});

@@ -5,6 +5,7 @@ body {
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 16px;
   color: #111;
+  overflow-x: hidden;
 }
 
 a {
@@ -27,12 +28,12 @@ header {
   display: flex;
   justify-content: center;
   position: absolute;
-  z-index: 50;
+  z-index: 99;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
   //반투명
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   top: 0;
 
   .container {
@@ -61,9 +62,7 @@ header {
       &:last-child {
         display: none;
       }
-      .material-icons {
-        font-size: 48px;
-      }
+
       &:hover {
         color: $main-color;
       }
@@ -86,54 +85,55 @@ header {
       padding-left: 20px;
       padding-right: 20px;
     }
-  }
-  .depth01 {
-    display: flex;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-    padding: 0 30px;
-    font-weight: 500;
-    font-size: 18px;
-    box-sizing: border-box;
-  }
-  .depth02 {
-    position: absolute;
-    background-color: #fff;
-    left: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-    border-radius: 10px;
-    top: 120px;
-    display: none;
-    li {
-      margin-top: 20px;
-      text-align: center;
-      &:hover {
-        color: $main-color;
-      }
+
+    .depth01 {
+      display: flex;
+      height: 100px;
+      justify-content: center;
+      align-items: center;
+      padding: 0 30px;
+      font-weight: 500;
+      font-size: 18px;
+      box-sizing: border-box;
     }
-    &:before {
-      content: "";
-      display: block;
-      border: 10px solid transparent; /*transparent는 투명하게*/
-      border-bottom-color: #fff;
+    .depth02 {
       position: absolute;
-      top: -20px;
-      left: calc(50% - 10px);
+      background-color: #fff;
+      left: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+      border-radius: 10px;
+      top: 120px;
+      display: none;
+      &:before {
+        content: "";
+        display: block;
+        border: 10px solid transparent; /*transparent는 투명하게*/
+        border-bottom-color: #fff;
+        position: absolute;
+        top: -20px;
+        left: calc(50% - 10px);
+      }
+      li {
+        margin-top: 20px;
+        text-align: center;
+        &:hover {
+          color: $main-color;
+        }
+      }
     }
   }
 }
-
 footer {
   #family-site {
-    margin: 50px 0;
+    margin: 100px 0;
     ul {
       display: flex;
       justify-content: space-between;
       li {
+        width: auto;
         img {
           height: 30px;
         }
@@ -169,7 +169,7 @@ footer {
           display: flex;
           margin-bottom: 20px;
           li {
-            margin-left: 20px;
+            margin-right: 20px;
             a {
               display: flex;
               justify-content: center;
@@ -177,7 +177,7 @@ footer {
               width: 50px;
               height: 50px;
               background-color: #333;
-              border-radius: 50%;
+              border-radius: 100px;
               transition: all 0.5s ease;
               &:hover {
                 background-color: $main-color;
@@ -210,9 +210,12 @@ footer {
     }
   }
 }
+
 @media all and(max-width: 1400px) {
   .container {
     width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
   }
   header {
     .container {
@@ -222,6 +225,11 @@ footer {
       .util {
         right: 50px;
       }
+    }
+  }
+  footer {
+    #footer {
+      padding: clamp(30px, 7.1vw, 100px) 0;
     }
   }
 }
@@ -288,9 +296,55 @@ footer {
     }
   }
 }
-@media all and (max-width: 960px) {
-  // 여기다가 960보다 작아졌을 때 어떤 css 쓸건지 적용
+
+@media all and (max-width: 980px) {
+  .container {
+    padding: 0 20px;
+  }
+  footer {
+    #family-site {
+      //  width: 100%;
+      //  overflow-x: scroll
+      margin: clamp(30px, 10.2vw, 100px) 0;
+      // ul {
+      //   display: block;
+      //   white-space: nowrap;
+      //   li {
+      //     display: inline-block;
+      //     margin-right: 30px;
+      //   }
+      // }
+    }
+    #footer {
+      .container {
+        flex-direction: column;
+        font-size: 14px;
+        .info {
+          .util {
+            ul {
+              justify-content: space-between;
+              li {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+        .sns {
+          margin-top: 50px;
+          ul {
+            li {
+              margin-left: 0;
+              &:nth-last-child(1) {
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
 @media all and (max-width: 640px) {
   // 여기다가 640보다 작아졌을 때 어떤 css 쓸건지 적용
   header {
